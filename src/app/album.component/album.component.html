@@ -1,0 +1,10 @@
+<div class="line">
+    <span>{{category}}</span>
+</div>
+<div class="preview_container">
+    <div class="preview">
+        <div *ngFor="let prev of photos; let i = index" class="preview_item">
+            <img src={{getPrevPhoto(i)}} alt="">
+        </div>
+    </div>
+</div>

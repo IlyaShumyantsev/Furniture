@@ -1,0 +1,12 @@
+<div class="line">
+    <span>Наши акции</span>
+</div>
+<div class="preview_container">
+    <div class="preview">
+        <div *ngFor="let promo of promos; let i = index" class="preview_item">
+            <img src={{getPromoImg(i)}} alt="">
+            <h2>{{getPromoTitle(i)}}</h2>
+            <p>{{getPromoDescription(i)}}</p>
+        </div>
+    </div>
+</div>

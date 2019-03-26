@@ -1,0 +1,12 @@
+<div class="line">
+    <span>Наш каталог</span>
+</div>
+<div class="preview_container">
+    <div class="preview">
+        <div *ngFor="let prev of mainComponent.prevs; let i = index" class="preview_item" [routerLink]="['../album', i]">
+            <img src={{mainComponent.getPrevPhoto(i)}} alt="">
+            <h2>{{mainComponent.getPrevName(i)}}</h2>
+            <p>{{mainComponent.getPrevDescription(i)}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,280 @@
+@font-face{
+	font-family: PTSerifBold;
+	src: url(./styles/fonts/PTSerifBold.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+header{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo{
+    background: #FFFF00;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo a {
+    width: 900px;
+}
+
+.graphic-logo{
+    padding: 5px;
+    max-width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.mob-logo {
+    max-width: 80px;
+    box-sizing: border-box;
+}
+
+.number {
+    position: relative;
+    width: 250px;
+    float: right;
+}
+
+.number span {
+    font-family: PTSerifBold;
+    color: rgb(95, 95, 95);
+    position: absolute;
+    top: 30%;
+    font-size: 14px;
+    text-align: center;
+}
+
+nav{
+    margin: auto;
+    width: 800px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.top-nav{
+    background-color: white;
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.top-nav a{
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 15px;
+}
+
+.top-nav a:not(:first-child):hover{
+    border-bottom: 2px solid #FF8000;
+}
+
+.top-nav .icon{
+    display: none;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background: #FFFF00;
+    position: relative;
+    margin-top: -50px; 
+    clear:both;
+}
+
+footer div {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    top: 30%;
+}
+
+footer div span {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 12px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: rgb(75, 75, 75);
+    font-weight: bold;
+}
+
+.shadowWindow {
+    display: none;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modalWindow {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 330px;
+    width: 400px;
+    background: blue;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1360px rgba(0,0,0,0.9);
+    background: #efefef;
+}
+
+#email_form {
+    z-index: 100;
+    width: 350px; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    margin: auto; 
+}
+
+#email_form input, textarea {
+    font-family: PTSerifBold;
+    font-size: 15px;
+    color: rgba(0,0,0,0.5);
+    background-color: #fff;
+    border: 2px solid #cccccc;
+    width: 280px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+#email_form input[type=submit], #email_form input[type=button] {
+    height: 50px;
+    width: 140px;
+    background-color: #fff;
+}
+
+#email_form input[type=submit]:hover, #email_form input[type=button]:hover {
+    cursor: pointer;
+    background-color: rgb(224, 220, 220);
+}
+
+textarea {
+    height: 100px;
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 280px;
+    min-width: 280px;
+}
+
+#email_form input:focus {
+    border: 2px solid #12ad5e;
+}
+
+.call {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 60px;
+    right: 0;
+    margin-right: 60px;
+    max-width: 55px;
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+}
+
+@media screen and (max-width: 768px){
+    .hamburger{
+        padding: 1px;
+        max-width: 15%;
+        max-height: 10%;
+        box-sizing: border-box;
+    }
+    .logo a {
+        width: 100%;
+    }
+    .mob-logo {
+        max-width: 80px;
+        box-sizing: border-box;
+    }
+    .number {
+        position: relative;
+        width: 60%;
+        float: right;
+    }
+    .number span {
+        font-family: PTSerifBold;
+        color: rgb(95, 95, 95);
+        position: absolute;
+        top: 30%;
+        font-size: 14px;
+        text-align: center;
+    }
+    .title {
+        position: absolute;
+        float: right;
+        font-family: PTSerifBold;
+        color: rgb(7, 7, 7);
+        margin-right: 10px;
+        font-size: 16px;
+        top: 0;
+        margin-top: 50px;
+    }
+    span{
+        text-align: left;
+        font-size: 24px;
+        float: left;
+    }
+    .top-nav a{
+        display: none;
+    }
+    .top-nav a.icon{
+        text-align: right;
+        display: block;
+        padding-bottom: 10px;
+        position: absolute;
+        right: 0;
+    }
+    nav{
+        display: block; 
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-bottom: 80px;
+    }
+    .top-nav.responsive{
+        position: relative;
+        display: block; 
+    }
+    .top-nav.responsive a:not(:first-child){
+        background-color: rgba(202, 199, 199, 0.24);
+        position: relative;
+        top: 70px;
+        display: block;
+        text-align: left;
+    }
+
+    .call {
+        margin-bottom: 50px;
+        margin-right: 10px;
+    }
+
+    .modalWindow {
+        height: 330px;
+        width: 330px;
+    }
+}

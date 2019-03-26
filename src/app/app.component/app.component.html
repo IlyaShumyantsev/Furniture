@@ -1,0 +1,64 @@
+<div style="min-height: 100%; padding-bottom: 50px;">
+<div class="shadowWindow" id="shadowWindow">
+    <div class="modalWindow" id="modalWindow">
+        <br>
+        <div class="textModalWindow">Хотите заказать звонок?</div>
+        <form action="https://postmail.invotes.com/send" method="post" id="email_form">
+            <input type="text" name="subject" placeholder="Ваш номер" />
+            <textarea name="text" placeholder="Комментарий..."></textarea>
+            <input type="hidden" name="access_token" value="d16sv7i4os9buqa89y9subd7" />
+            <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+            <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+            <input id="submit_form" type="submit" value="Заказать звонок!" (click)="sendMessage()"/>
+            <input id="close_form" type="button" value="Отмена" (click)="closeForm()"/>
+        </form>
+    </div>
+</div>
+<header>
+    <div class="logo">
+        <a>
+            <div *ngIf="resolution() <= 768; then mobile else desktop"></div>
+            <ng-template #desktop>
+                <img class="graphic-logo" src="{{loadLogo()}}" alt="Logo" routerLink="/">
+                <span class="number">
+                    <img class="mob-logo" src="{{loadMtsico()}}" alt="Logo" align="left">
+                    <span>+375(29)878-67-28</span>
+                    <!--<img class="mob-logo" src="assets/images/mts_ico.png" alt="Logo" align="left">
+                    <span>+375(25)726-75-64</span>!-->
+                </span>
+            </ng-template>
+            <ng-template #mobile>
+                <img class="graphic-logo" src="{{loadMobLogo()}}" alt="Logo" routerLink="/">
+                <span class="number">
+                    <img class="mob-logo" src="{{loadMtsico()}}" alt="Logo" align="left">
+                    <span>+375(29)878-67-28</span>
+                </span>
+                <span class="title">Корпусная мебель в Могилеве</span>
+            </ng-template>
+        </a>
+    </div>
+    <nav>
+        <div class="top-nav">
+            <a (click)="menu()" class="icon">
+                <div *ngIf="status; then hide else show"></div>
+                <ng-template #hide><span>{{title}}</span><img class="hamburger" src="{{loadHamburger()}}"></ng-template>
+                <ng-template #show><span>{{title}}</span><img class="hamburger" src="{{loadHamburgerUnpressed()}}"></ng-template>
+                <hr>
+            </a>
+            <a routerLink="/">Главная</a>
+            <a routerLink="catalog">Каталог продукции</a>
+            <a routerLink="promotion">Акции</a>
+            <a routerLink="services">Услуги</a>
+            <a routerLink="contacts">Контакты</a>
+        </div>
+    </nav>
+</header>
+<router-outlet></router-outlet>
+<img class="call" src="{{loadCallIco()}}" alt="ico" align="left" (click)="showForm()">
+</div>
+<br>
+<footer>
+    <div>
+        <span>2018 © MiLena.by Все права защищены. Использование материала только с разрешения владельца сайта.</span>
+    </div>
+</footer>

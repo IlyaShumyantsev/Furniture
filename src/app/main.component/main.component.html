@@ -1,0 +1,52 @@
+<div class="line">
+    <span>Наши работы</span>
+</div>
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src={{currentPhoto()}} class="slide">
+    </div>
+    <a class="prev" (click)="plusSlide(-1)"><img src={{loadArrowleft()}}></a>
+    <a class="next" (click)="plusSlide(1)"><img src={{loadArrowright()}}></a>
+</div>
+<br>
+<div style="text-align: center;">
+    <span class="dot" *ngFor="let item of slider; let i = index" (click)="showSlide(i)"></span>
+</div>
+<br>
+<hr>
+<div class="info">
+    <h1>MiLena.by - Корпусная мебель в Могилеве</h1>
+    <br>
+    <p>
+        Корпусная мебель в Могилеве любой степени сложности. Материалы компании
+        <a href="https://www.egger.com/shop/ru_BY/" target="_blank">E EGGER</a>. Австрийское качество, низкие 
+        цены, рассрочка до 3-х месяцев, гарантия 24 месяца.
+    </p>
+    <p>
+        Почему Вы должны заказать мебель именно у нас - мы не содержим мебельные салоны, у нас нет собственного 
+        производства, мы не платим аренду, поэтому у нас низкие цены. Материалы от официального представителя 
+        компании <a href="https://www.egger.com/shop/ru_BY/" target="_blank">E EGGER</a> 
+        в Могилеве, мы не накручиваем 150-200%, как это делают большинство мебельных компаний. 
+    </p>
+    <p>
+        Для оформления заказа или получение более подробной информации звоните по номеру <span>+375(29)878-67-28</span>.
+    </p>
+</div>
+<br>
+<div class="line">
+    <span>Наш каталог</span>
+</div>
+<div class="preview_container">
+    <div class="preview">
+        <div *ngFor="let prev of prevs; let i = index" class="preview_item" [routerLink]="['album', i]">
+            <img src={{getPrevPhoto(i)}} alt="">
+            <h2>{{getPrevName(i)}}</h2>
+            <p>{{getPrevDescription(i)}}</p>
+        </div>
+    </div>
+</div>
+<div class="line">
+    <span>Мы в соцсетях</span>
+</div>
+<div id="ok_group_widget" style="text-align: center;"></div>
+<hr>
